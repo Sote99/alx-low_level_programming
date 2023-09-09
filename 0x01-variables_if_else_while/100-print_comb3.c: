@@ -1,0 +1,17 @@
+	p	putchar('\n')iii ones = '0';
+  nt ones = '0';
+      |      ^~~~
+100-print_comb3.c:8:6: note: previous definition of ‘ones’ was here
+    8 |  int ones = '0';
+      |      ^~~~
+100-print_comb3.c:11:7: error: ‘tens’ undeclared (first use in this function)
+   11 |  for (tens = '0'; tens <= '9'; tens++)
+      |       ^~~~
+100-print_comb3.c:11:7: note: each undeclared identifier is reported only once for each function it appears in    |      ^~~~
+100-print_comb3.c:8:6: note: previous definition of ‘ones’ was here
+    8 |  int ones = '0';
+      |      ^~~~
+100-print_comb3.c:11:7: error: ‘tens’ undeclared (first use in this function)
+   11 |  for (tens = '0'; tens <= '9'; tens++)
+      |       ^~~~
+100-print_comb3.c:11:7: note: each undeclared identifier is reported only once for each function it appears inutchar('\n')i
