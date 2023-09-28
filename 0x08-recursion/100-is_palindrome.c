@@ -1,30 +1,48 @@
+#include "main.h"
 /**
- * is_palindrome - returns the lengh
- * @s: string to calculate the lenght
- *
- * Return: length of the string
+ * _strlen_recursion - prints the length of a string
+ * @s: the pointer to the string
+ * Return: 0
+ */
+int _strlen_recursion(char *s)
+{
+	if (*s == '\0')
+	{
+		return (0);
+	}
+	else
+	{
+		return (1 + _strlen_recursion(s + 1));
+	}
+}
+/**
+ * comp_rec - fills memory with a constant byte.
+ * @s: first bytes of the memory
+ * @ln: first bytes of the memory
+ * @i: first bytes of the memory
+ * Return: 0
+ */
+int comp_rec(char *s, int ln, int i)
+{
+	if (i >= ln)
+	{
+		return (1);
+	}
+	if (*(s + i) != *(s + (ln - 1)))
+	{
+		return (0);
+	}
+	return (comp_rec(s, ln - 1, i + 1));
+}
+/**
+ * is_palindrome - fills memory with a constant byte.
+ * @s: first bytes of the memory
+ * Return: -
  */
 int is_palindrome(char *s)
 {
-	if (*s == '\0')
-		return (0);
-	return (1 + is_palindrome(s + 1));
-}
+	int ln = _strlen_recursion(s);
+	int i = 0;
 
-/**
- * check_pal - checks the characters recursively for palindrome
- * @s: string to check
- * @t: iterator
- * @leng: length of the string
- *
- * Return: 1 if palindrome, 0 if not
- */
-int check_pal(char *s, int t, int leng)
-{
-	if (*(s + t) != *(s + leng - 1))
-		return (0);
-	if (t >= leng)
-		return (1);
-	return (check_pal(s, t + 1, leng - 1));
+	return (comp_rec(s, ln, i));
 }
-
